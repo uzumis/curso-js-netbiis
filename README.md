@@ -1,2 +1,2 @@
 # curso-js-netbiis
-Curso de JS 
+Curso de HTML, CSS, JS e BD
