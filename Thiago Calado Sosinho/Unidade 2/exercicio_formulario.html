@@ -5,50 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade Formulário</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form action="#">
-        <label for="nome"> Nome completo:</label>
-        <input type="text" name="nome_completo" id="nome" placeholder="Nome">
-        <br />
-        <br />
-        <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email" placeholder="Email">
-        <br>
-        <br>
-        <label for="telefone">Telefone:</label>
-        <input type="tel" name="telefone" id="telefone" placeholder="telefone">
-        <p>Sexo:</p>
-        <label for="masculino">Masculino</label>
-        <input type="radio" name="sexo" id="masculino" value="masculino">
-        <label for="feminino">Feminino</label>
-        <input type="radio" name="sexo" id="feminino" value="feminino">
-        <br>
-        <br>
-        <label for="areas-de-interesse">Áreas de interesse:</label>
-        <select name="areas-de-interesse" id="areas-de-interesse">
-            <option value="desenvolvimento">Desenvolvimento</option>
-            <option value="novelas-da-globo">Novelas da Globo</option>
-            <option value="engenharia-de-software">Engenharia de Software</option>
-            <option value="ux-ui">UX/UI</option>
-            <option value="amarelinha">Amarelinha</option>
-            <option value="video-game">Vídeo Game</option>
-            <option value="omega-3">Omega 3</option>
-        </select>
-        <p>Preferências de Contato:</p>
-        <label for="email">E-mail</label>
-        <input type="checkbox" name="preferencias_contato" id="email" value="email">
-        <label for="telefone">Telefone</label>
-        <input type="checkbox" name="preferencias_contato" id="telefone" value="telefone">
-        <label for="sms">SMS</label>
-        <input type="checkbox" name="preferencias_contato" id="sms" value="sms">
-        <br>
-        <label for="mensagem">
-            <p>Mensagem:</p>
-        </label>
-        <textarea name="mensagem" id="mensagem" cols="30" role="5" placeholder="Mensagem"></textarea>
-        <input type="submit" value="Enviar" name="" id="">
+    <h1 class="formulario__title">Formulário de contato</h1>
+    <form class="formulario__container" action="#">
+        <div class="formulario__wrapper">
+            <div class="input__wrapper--input">
+                <label for="nome"> Nome completo:</label>
+                <input class="input__wrapper--input-text" type="text" name="nome_completo" id="nome" placeholder="Nome">
+            </div>
+
+            <div class="input__wrapper--input">
+                <label for="email">E-mail:</label>
+                <input class="input__wrapper--input-text" type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="input__wrapper--input">
+                <label for="telefone">Telefone:</label>
+                <input class="input__wrapper--input-text" type="tel" name="telefone" id="telefone"
+                    placeholder="telefone">
+            </div>
+            <div class="input__wrapper--radio">
+                <p>Sexo:</p>
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="sexo" id="masculino" value="masculino">
+                <label for="feminino">Feminino</label>
+                <input type="radio" name="sexo" id="feminino" value="feminino">
+            </div>
+            &nbsp;
+            <label for="areas-de-interesse">Áreas de interesse:</label>
+            <select class="input__wrapper--input-text" name="areas-de-interesse" id="areas-de-interesse">
+                <option value="desenvolvimento">Desenvolvimento</option>
+                <option value="novelas-da-globo">Novelas da Globo</option>
+                <option value="engenharia-de-software">Engenharia de Software</option>
+                <option value="ux-ui">UX/UI</option>
+                <option value="amarelinha">Amarelinha</option>
+                <option value="video-game">Vídeo Game</option>
+                <option value="omega-3">Omega 3</option>
+            </select>
+  
+            <div class="input__wrapper--checkbbox">
+                <p>Preferências de Contato:</p>
+                <label for="email">E-mail</label>
+                <input type="checkbox" name="preferencias_contato" id="email" value="email">
+                <label for="telefone">Telefone</label>
+                <input type="checkbox" name="preferencias_contato" id="telefone" value="telefone">
+                <label for="sms">SMS</label>
+                <input type="checkbox" name="preferencias_contato" id="sms" value="sms">
+            </div>
+            <label class="input__wrapper--input-text" for="mensagem">
+                <p>Mensagem:</p>
+            </label>
+            <textarea name="mensagem" id="mensagem" cols="30" role="5" placeholder="Mensagem"></textarea>
+            <input class="formulario__button" type="submit" value="Enviar" name="" id="">
+        </div>
+
     </form>
 </body>
 
