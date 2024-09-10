@@ -91,7 +91,10 @@ label {
     width: 100%;
     display: flex;
     justify-content: center;
-
+    p {
+        color: #2c2c2c;
+        font-weight: bolder;
+    }
 }
 
 .formulario__wrapper {
@@ -131,10 +134,7 @@ label {
     border-radius: 8px;
 }
 
-p {
-    color: #2c2c2c;
-    font-weight: bolder;
-}
+
 
 .input__wrapper--radio {
     label {
