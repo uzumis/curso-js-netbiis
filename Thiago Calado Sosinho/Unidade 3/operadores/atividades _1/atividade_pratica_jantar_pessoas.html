@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let conta = prompt('Digite o valor da conta');
+        let numeroPessoas = prompt('Digite quantas pessoas são na mesa');
+
+        let valorPorPessoa = parseFloat(conta) / parseInt(numeroPessoas);
+
+        document.write('Conta total R$: ' + conta);
+        document.write('<br>');
+        document.write('Valor da conta por ' + numeroPessoas + ' pessoas: R$ ' + valorPorPessoa.toFixed(2));
+        document.write('<br>');
+
+    </script>
+</body>
+
+</html>

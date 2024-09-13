@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade DOM</title>
+</head>
+<body>
+    <div id="background-page">
+        <h1 id="welcome-message"></h1>
+    </div>
+</body>
+<script>
+    let backgroundColor = document.getElementById('background-page');
+    let bodyBackground = document.body;
+    let welcome = document.getElementById('welcome-message');
+    
+    backgroundColor.style.backgroundColor = prompt("Defina a cor de fundo da div");
+    backgroundColor.style.color = prompt("Defina a cor da fonte");
+    bodyBackground.style.backgroundColor = prompt("Defina a cor do fundo do Body");
+    welcome.innerHTML = 'BOAS VINDAS';
+</script>
+</html>

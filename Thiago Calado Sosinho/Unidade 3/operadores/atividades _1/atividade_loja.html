@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Lojas</title>
+</head>
+<body>
+    <script>
+        let produtoValor = prompt('Digite o valor do produto');
+        let desconto = 0.1;
+        let valorVista = parseFloat(produtoValor) - (produtoValor * desconto);
+        let valorParcelaDois = parseFloat(produtoValor) / 2;
+        let valorParcelaTres = parseFloat(produtoValor) / 3;
+        
+        document.writeln('====Valor produto: R$'+ produtoValor);
+        document.writeln('<br>');
+        document.writeln('====Opção 1: A vista (com desconto de 10% R$ '+(produtoValor*desconto).toFixed(2)+'): R$'+valorVista.toFixed(2));
+        document.writeln('<br>');
+        document.writeln('====Opção 2: A prazo: 2 parcelas de R$: '+valorParcelaDois.toFixed(2)+' sem juros.');
+        document.writeln('<br>');
+        document.writeln('====Opção 3: A prazo: 3 parcelas de R$: '+valorParcelaTres.toFixed(2)+' sem juros.');
+        </script>   
+</body>
+
+
+</html>

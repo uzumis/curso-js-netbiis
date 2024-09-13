@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Dados pessoais:</div>
+</body>
+<script>
+
+const nome = prompt('Digite seu nome');
+const idade = prompt('Digite sua idade');
+const email = prompt('Digite seu email');
+const telefone = prompt('Digite seu telefone');
+const aluno = {
+        nome,
+        idade,
+        email,
+        telefone,
+  };
+    document.write(`Seu nome é ${aluno.nome}`);
+    document.write(`<br>`);
+    document.write(`Sua matricula é ${aluno.idade}`);
+    document.write(`<br>`);
+    document.write(`Sua idade é ${aluno.email}`);
+    document.write(`<br>`);
+    document.write(`Seu telefone é ${aluno.telefone}`);
+    
+    console.log (aluno);
+</script>
+</html>

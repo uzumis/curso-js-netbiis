@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Pratica Jantar</title>
+</head>
+
+<body>
+    <script>
+        let conta = prompt('Digite o valor da conta');
+        let taxaGarcon = parseFloat(conta) * 0.1;
+
+        let totalConta = parseFloat(conta) + taxaGarcon;
+        document.write('Conta: R$ ' + conta);
+        document.write('<br>');5
+        document.write('Taxa 10% de Serviço: R$ ' + taxaGarcon.toFixed(2));
+        document.write('<br>');
+        document.write('Valor total: R$ ' + totalConta.toFixed(2));
+    </script>
+</body>
+
+</html>
