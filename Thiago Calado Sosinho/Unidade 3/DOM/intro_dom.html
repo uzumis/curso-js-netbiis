@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style = "color:red;" id="titulo">Titulo</h1>
+    <p class="paragrafo">Nosso paragrafo</p>
+    <p class="paragrafo">Nosso paragrafo</p>
+    <input type="checkbox" name="checkbox" id="checkbox" checked="true">
+    <input type="text" name="nome" placeholder="Digite seu nome">
+    <script>
+        //Selecionando elementos
+        let titulo = document.getElementById('titulo');
+        let paragrafos = document.getElementsByClassName('paragrafo');
+        let paragrafosTag = document.getElementsByTagName('p');
+        let inputs = document.getElementsByName('nome');
+        let checkbox = document.getElementById('checkbox');
+        let querySelectorTitulo = document.querySelector('#titulo');
+        let querySelectorParafrago = document.querySelector('.paragrafo');
+        console.log(querySelectorTitulo);
+        console.log(querySelectorParafrago);
+
+        //Acessando atributos dos nosso elmentos
+        console.log(titulo.innerText);
+        console.log(paragrafos[0].innerHTML);
+
+        //Acessando os estilos do elemento
+        console.log(titulo.style.color);
+
+        //Acessando outras propriedades
+        console.log(inputs[0].placeholder);
+        console.log(inputs[0].name);
+        console.log(checkbox.checked);
+        console.log(checkbox.value);
+
+        //Modificando elementos
+        titulo.innerText = 'Novo titulo';
+        titulo.innerText += ' Alterado';
+        paragrafos[0].innerText +=' Alterado';
+        inputs[0].value +=' Valor Padrão';
+
+    </script>
+</body>
+</html>

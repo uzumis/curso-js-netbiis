@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="formulario__title">Formulário de contato</h1>
+    <form id="form-data" class="formulario__container" action="#" required>
+        <div id="container" class="formulario__wrapper">
+            <div class="input__wrapper--input">
+                <label for="nome"> Nome completo:</label>
+                <input id='nome' class="input__wrapper--input-text" type="text" name="nome_completo" id="nome"
+                    placeholder="Nome" required>
+            </div>
+
+            <div class="input__wrapper--input">
+                <label for="email">E-mail:</label>
+                <input id='email' class="input__wrapper--input-text" type="email" name="email" id="email"
+                    placeholder="Email">
+            </div>
+            <div class="input__wrapper--input">
+                <label for="telefone">Telefone:</label>
+                <input id='telefone' class="input__wrapper--input-text" type="tel" name="telefone" id="telefone"
+                    placeholder="telefone">
+            </div>
+            <div class="input__wrapper--radio" id="sexo">
+                <p>Sexo:</p>
+                <label for="masculino" required>Masculino</label>
+                <input type="radio" name="sexo" id="masculino" value="masculino" required>
+                <label for="feminino">Feminino</label>
+                <input type="radio" name="sexo" id="feminino" value="feminino">
+            </div>
+            &nbsp;
+            <label for="areas-de-interesse">Áreas de interesse:</label>
+            <select class="input__wrapper--input-text" name="areas-de-interesse" id="areas-de-interesse">
+                <option value="desenvolvimento">Desenvolvimento</option>
+                <option value="novelas-da-globo">Novelas da Globo</option>
+                <option value="engenharia-de-software">Engenharia de Software</option>
+                <option value="ux-ui">UX/UI</option>
+                <option value="amarelinha">Amarelinha</option>
+                <option value="video-game">Vídeo Game</option>
+                <option value="omega-3">Omega 3</option>
+            </select>
+
+            <div class="input__wrapper--checkbbox" id="preferencias_contato">
+                <p>Preferências de Contato:</p>
+                <label for="email">E-mail</label>
+                <input type="checkbox" name="preferencias_contato" id="email" value="email" required>
+                <label for="telefone">Telefone</label>
+                <input type="checkbox" name="preferencias_contato" id="telefone" value="telefone">
+                <label for="sms">SMS</label>
+                <input type="checkbox" name="preferencias_contato" id="sms" value="sms">
+            </div>
+            <label class="input__wrapper--input-text" for="mensagem">
+                <p>Mensagem:</p>
+            </label>
+            <textarea name="mensagem" id="mensagem" cols="30" role="5" placeholder="Mensagem"></textarea>
+            <input id='enviar' class="formulario__button" type="submit" value="Enviar" name="" id="">
+        </div>
+
+    </form>
+
+    <script>
+
+        function submitForm() {
+                const container = document.getElementById('container');
+                let form = container.innerHTML;
+
+                let nome = document.getElementById('nome');
+                let email = document.getElementById('email');
+                let telefone = document.getElementById('telefone');
+                let mensagem = document.getElementById('mensagem');
+                let interesse = document.getElementById('areas-de-interesse');
+
+                let sexo = document.querySelector('input[name="sexo"]:checked');
+
+                let contactPref = document.querySelectorAll('input[name="preferencias_contato"]:checked');
+
+                let contacts = [];
+                for (let i = 0; i < contactPref.length; i++) {
+                    contacts.push(`<li>${contactPref[i].value}</li>`);
+                }
+                if (!sexo) {
+                    alert('Por favor, selecione uma opcao de sexo');
+                    return;
+                }
+                if (contacts.length === 0) {
+                    alert('Por favor, selecione uma opcao de contato');
+                    return;
+                }
+
+
+            container.innerHTML = `
+            <div class="form__successfull">
+
+            <h1>Dados submetidos com sucesso!!</h1>
+                <p><strong>Nome</strong>: ${nome.value}</p>
+                <p><strong>E-mail</strong>: ${email.value}</p>
+                <p><strong>Telefone</strong>: ${telefone.value}</p>
+                <p><strong>Sexo</strong>: ${sexo.value}</p>
+                <p><strong>Área de interesse</strong>: ${interesse.value}</p>
+                <p><strong>Preferencias de contato</strong>:</p>
+                <ul>${contacts.join('')}</ul>
+                <p><strong>Mensagem</strong>: ${mensagem.value}</p>
+                <button id="reset-form" class="formulario__button">Novo formulario</button>
+            </div>`;
+                
+                document.getElementById('reset-form').addEventListener('click', function (event) {
+                    event.preventDefault();
+                    container.innerHTML = form;
+                    let submit = document.getElementById('enviar');
+                    submit.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        submitForm();
+                    });
+                });
+            }
+
+
+            let submit = document.getElementById('enviar');
+            submit.addEventListener('click', function (event) {
+                event.preventDefault();
+                submitForm();
+            });
+
+    </script>
+</body>
+
+</html>

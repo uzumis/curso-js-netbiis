@@ -1,0 +1,157 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.curriculum__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    ;
+}
+
+.curriculum__wrapper {
+    border-radius: 8px;
+    border: 5px solid gray;
+    width: 50%;
+    padding: 40px 40px;
+
+}
+
+.curriculum__intro {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 8px;
+    padding: 10px;
+}
+
+.curriculum__img {
+    border-radius: 100px;
+    border: 5px solid gray;
+}
+
+h1 {
+    color: rgb(84, 109, 255);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: gray
+}
+
+#subtitulo {
+    color: green;
+}
+
+.amarelo {
+    color: #ffe609;
+}
+
+#area-principal {
+    background-color: rgb(rgb(148, 168, 30), green, blue);
+}
+
+.curriculum__skills--container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+}
+
+.curriculum__skills--item {
+    padding: 8px;
+    background-color: rgb(84, 109, 255);
+    border-radius: 8px;
+    color: white;
+}
+
+.curriculum__copyright {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgb(84, 109, 255);
+    border-radius: 8px;
+    position: fixed;
+    bottom: 0px;
+}
+
+
+
+
+/* FORMULARIO */
+label {
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+.formulario__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    p {
+        color: #2c2c2c;
+        font-weight: bolder;
+    }
+    .form__successfull{
+        text-transform: uppercase;
+        p {
+            color: #2c2c2c;
+            font-weight: 200;
+        }
+    }
+}
+
+.formulario__wrapper {
+    border: 2px solid gray;
+    border-radius: 8px;
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+
+.input__wrapper--input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input__wrapper--input-text {
+    border-radius: 8px;
+    padding: 5px;
+    border-color: gray;
+}
+
+.formulario__title {
+    display: flex;
+    justify-content: center;
+}
+
+.formulario__button {
+    background-color: rgb(84, 109, 255);
+    border: 1px solid white;
+    padding: 8px;
+    color: white;
+    font-weight: bolder;
+    border-radius: 8px;
+}
+
+
+
+.input__wrapper--radio {
+    label {
+        color: #2c2c2c;
+    }
+}
+
+.input__wrapper--checkbbox {
+    label {
+        color: #2c2c2c;
+    }
+}
+

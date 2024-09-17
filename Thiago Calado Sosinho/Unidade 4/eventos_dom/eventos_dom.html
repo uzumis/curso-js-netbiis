@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+
+            button {
+                font-size: 20px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="botao" onclick="clicou()">Click me</button>
+    <div class="container">
+        <button id='adicionar' onclick="addValue()">+</button>
+        <h1 id="valor">5</h1>
+        <button id='remover' onclick="removeValue()">-</button>
+    </div>
+
+    <script>
+        function clicou() {
+            alert('Botao clicado');
+        }
+
+        let valor = document.getElementById('valor').innerText;
+        let valorEl = document.getElementById('valor');
+
+        function addValue() {
+            valor++;
+            valorEl.innerText = valor;
+
+        }
+        function removeValue() {
+            valor--;
+            valorEl.innerText = valor;
+        }
+
+
+    </script>
+</body>
+
+</html>
