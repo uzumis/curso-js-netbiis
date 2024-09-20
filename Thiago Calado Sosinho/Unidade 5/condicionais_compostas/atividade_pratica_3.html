@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site proibido</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .site__container {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+        }
+
+        .oncinha__container {
+            width: 500px;
+        }
+
+        .button__yes {
+            color: white;
+            background-color: green;
+            border-radius: 8px;
+        }
+
+        .button__no {
+            color: white;
+            background-color: red;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <H1>SITE EXTREMAMENTE PROIBIDO!</H1>
+    <div id='site-container' class="site__container">
+        <span>O site não é apropriado para menores de 18 anos. Você é maior de 18 anos?</span>
+        <div class="termos__uso">
+            <input type="checkbox" name="termos" id="termos">Eu concordo com os termos de uso do site
+        </div>
+        <button id='sim' class="button__yes">SIM</button>
+        <button id='nao' class="button__no">NO</button>
+    </div>
+    <script>
+        let site = document.getElementById('site-container');
+        let yes = document.getElementById('sim');
+        let no = document.getElementById('nao');
+        yes.addEventListener('click', function (event) {
+            event.preventDefault();
+            let termos = document.querySelector('input[name="termos"]:checked');
+            if (termos) {
+                site.innerHTML = `Bem vindo ao site de apostas oncinha! <img class='oncinha__container' src='https://i.pinimg.com/736x/57/dc/ca/57dccac2cdc325b09421d448966052a2.jpg' />`
+            } else {
+                alert('Você precisa aceitar os termos!!!');
+            }
+        });
+        no.addEventListener('click', function (event) {
+            event.preventDefault();
+            site.innerHTML = `QUE SHOW DA XUXA É ESSE?!!O site não é apropriado para você! <img class='oncinha__container' src='https://noticiasdatv.uol.com.br/media/_versions/artigos_2023/globoplay-pra-sempre-paquitas-que-xou-da-xuxa-e-esse_fixed_large.jpg' />`;
+        });
+    </script>
+</body>
+
+</html>

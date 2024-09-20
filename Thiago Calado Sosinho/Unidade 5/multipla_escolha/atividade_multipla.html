@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Container da calculadora */
+        #calculadora {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Estilo para os rótulos e inputs */
+        .input__container label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .input__container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo para o botão */
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Estilo para o resultado */
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculadora">
+        <div class="input__container">
+            <label for="numero1">Digite o primeiro numero</label>
+            <input type="text" name="numero1" id="numero1" required>
+            <label for="numero2">Digite o segundo numero</label>
+            <input type="text" name="numero2" id="numero2" required>
+            <label for="operacao"></label>
+
+            <label for="operacao-matematica">Operacao matematica:</label>
+            <select name="operacao-matematica" id="operacao-matematica">
+                <option value="soma">+</option>
+                <option value="subtracao">-</option>
+                <option value="multiplicacao">*</option>
+                <option value="divisao">/</option>
+            </select>
+            <br>
+            <br>
+            <button id='calcular'>Calcular</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
+</body>
+<script>
+
+    function calculadora(numero1, numero2, operador) {
+
+        switch (operador) {
+            case 'soma':
+                document.getElementById('resultado').innerHTML = numero1 + numero2;
+                break;
+            case 'subtracao':
+                document.getElementById('resultado').innerHTML = numero1 - numero2;
+                break;
+            case 'multiplicacao':
+                document.getElementById('resultado').innerHTML = numero1 * numero2;
+                break;
+            case 'divisao':
+                if (numero2 == 0) {
+                    document.getElementById('resultado').innerHTML = 'Inválido divisão por zero'
+                    break;
+                }
+                document.getElementById('resultado').innerHTML = numero1 / numero2;
+                break;
+        }
+    }
+
+    let submit = document.getElementById('calcular');
+
+    submit.addEventListener('click', function (event) {
+        event.preventDefault();
+        let n1 = document.getElementById('numero1');
+        let n2 = document.getElementById('numero2');
+        let op = document.getElementById('operacao-matematica');
+        n1 = n1.value;
+        n2 = n2.value;
+        calculadora(parseFloat(n1), parseFloat(n2), op.value);
+    });
+
+</script>
+
+</html>
