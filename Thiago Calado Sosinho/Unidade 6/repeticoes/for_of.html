@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of</title>
+</head>
+<body>
+    <ul id="tarefas">
+
+    </ul>
+    <script>
+
+        let listaDeTarefas = ['trabalhar', 'estudar', 'descansar', 'lazer', 'dormir', 'comer'];
+        let listas = document.getElementById('tarefas');
+
+        for (tarefa of listaDeTarefas){
+            listas.innerHTML +=`<li> ${tarefa} </li>`
+        }
+    </script>
+</body>
+</html>

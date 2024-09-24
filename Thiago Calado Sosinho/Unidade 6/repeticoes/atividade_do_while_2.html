@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="bloco">Media = </h1>
+    <script>
+        function verificarNota(nota) {
+            if (isNaN(nota) || nota == 0) {
+                return false;
+            } else {
+                return nota;
+            }
+        }
+        let contador = 0;
+        let currentNota = 0;
+        let nota;
+
+        do {
+            nota = parseFloat(prompt("Digite numero: "));
+            verificarNota(nota);
+            currentNota += nota;
+            console.log('currentNota' + currentNota);
+            console.log(contador);
+            if (verificarNota(nota)!== false){
+                contador++;
+            }
+        } while (verificarNota(nota)!== false);
+        let media = currentNota / contador;
+        if (isNaN(media)){
+            document.getElementById('bloco').innerText = 'Valor incorreto ou primeiro valor = 0';
+        }else{
+            document.getElementById('bloco').innerText = media.toFixed(2);
+        }
+        
+    </script>
+</body>
+
+</html>
