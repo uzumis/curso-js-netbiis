@@ -11,9 +11,21 @@ let branco = document.getElementById('votos-brancos');
 let nulo = document.getElementById('votos-nulos');
 let brancoCount = 0;
 let nullCount = 0;
+const buttonHtml = `<div class="button__container">
 
+        <div class="urna-input-group">
+            <button id="voto-branco" class="btn-branco">Branco</button>
+        </div>
+              <div class="urna-input-group">
+            <button id="voto-corrige" class="btn-corrige">Corrige</button>
+        </div>
+              <div class="urna-input-group">
+            <button id="confirma-voto" class="btn-votar">Confirma</button>
+        </div>
+        </div>`;
 const CHECK_BUTTONS = document.getElementById('button-check');
 const UL_CANDIDATOS = document.getElementById('candidatos'); 
+
 function renderCandidates() {
     CHECK_BUTTONS.innerHTML = `${buttonHtml}`;
     UL_CANDIDATOS.innerHTML = '';
@@ -21,7 +33,7 @@ function renderCandidates() {
     candidatos.forEach((candidato => {
         UL_CANDIDATOS.innerHTML += `
          <li>
-                <span class="nome-candidato">${candidato.nome}</span>
+                <span class="nome-candidato">${candidato.nome} - ${candidato.numero}</span>
                 <span class="votos-candidato">${candidato.votos} votos</span>
             </li>
         `
@@ -56,24 +68,10 @@ function brancoNuloinit(){
     });
 }
 
-
 function votaCandidato(nomeCandidato) {
     const CANDIDATO_INDEX = candidatos.findIndex(el => el.nome == nomeCandidato);
     console.log(CANDIDATO_INDEX);
 }
-
-const buttonHtml = `<div class="button__container">
-
-        <div class="urna-input-group">
-            <button id="voto-branco" class="btn-branco">Branco</button>
-        </div>
-              <div class="urna-input-group">
-            <button id="voto-corrige" class="btn-corrige">Corrige</button>
-        </div>
-              <div class="urna-input-group">
-            <button id="confirma-voto" class="btn-votar">Confirma</button>
-        </div>
-        </div>`;
 
 function checkCandidato(numeroCandidato) {
     if (numeroCandidato == 1558861) {
@@ -94,7 +92,7 @@ function checkCandidato(numeroCandidato) {
                 <img class = 'candidate__photo' id="candidate-photo" src="${candidatos[CANDIDATO_INDEX].foto}" alt="${candidatos[CANDIDATO_INDEX].nome}" />
             </div>
             <br>
-            <h1> ${candidatos[CANDIDATO_INDEX].nome} </h1>
+            <h1> ${candidatos[CANDIDATO_INDEX].nome} - ${candidatos[CANDIDATO_INDEX].numero}</h1>
             ${buttonHtml}`
         }
         const CONFIRMA = document.getElementById('confirma-voto');
@@ -115,7 +113,6 @@ function checkCandidato(numeroCandidato) {
         brancoNuloinit();
     }
 }
-
 
 inputVote.addEventListener('input', function (event) {
     event.preventDefault();
