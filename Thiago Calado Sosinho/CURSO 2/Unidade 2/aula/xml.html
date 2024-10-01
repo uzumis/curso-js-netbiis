@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const xmlString = /*xml*/ `
+            <clientes>
+                <cliente>
+                    <nome>Thiago</nome>
+                    <idade>32</idade>
+                </cliente>
+
+                <cliente>
+                    <nome>Maria</nome>
+                    <idade>39</idade>
+                </cliente>
+            </clientes>
+                `;
+
+        function parseXML(xmlString) {
+            const parser = new DOMParser();
+            const xmlDocumento = parser.parseFromString(xmlString, 'text/xml');
+            return xmlDocumento;
+        }
+
+        function xmlToObject(xmlDoc) {
+            const clientes = xmlDoc.querySelectorAll('cliente');
+            const clientesList = [];
+            for (let cliente of clientes) {
+                const nome = cliente.querySelector('nome').textContent;
+                const idade = cliente.querySelector('idade').textContent;
+                clientesList.push(nome, idade);
+            }
+            return clientesList;
+        };
+
+        const xmlDocument = parseXML(xmlString);
+        const clientesList = xmlToObject(xmlDocument);
+        console.log(clientesList)
+    </script>
+</body>
+
+</html>

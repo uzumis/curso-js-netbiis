@@ -31,8 +31,9 @@ function renderCandidates() {
     UL_CANDIDATOS.innerHTML = '';
     candidatos.sort((a, b) => b.votos - a.votos);
     candidatos.forEach((candidato => {
-        UL_CANDIDATOS.innerHTML += `
-         <li>
+        UL_CANDIDATOS.innerHTML += /*html*/
+        `
+            <li>
                 <span class="nome-candidato">${candidato.nome} - ${candidato.numero}</span>
                 <span class="votos-candidato">${candidato.votos} votos</span>
             </li>
