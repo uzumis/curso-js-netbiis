@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //armazenando local storage
+        localStorage.setItem('nome', 'Fulano');
+
+        //Armazenando dados no SessionStorage
+        sessionStorage.setItem('local', 'Belem');
+
+        const nome = localStorage.getItem('nome');
+        const local = sessionStorage.getItem('local');
+
+        document.write(nome + '<br>');
+        document.write(local + '<br>');
+
+        // localStorage.removeItem('nome');
+        // sessionStorage.removeItem('local');
+    </script>
+</body>
+
+</html>

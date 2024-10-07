@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="trocarHref()"> Trocar href</button>
+    <button onclick="fazerAssgin()"> Trocar fazerAssgin</button>
+    <button onclick="fazerReplace()"> Trocar fazerReplace</button>
+    <button onclick="fazerReload()"> Trocar fazerReload</button>
+    <button onclick="paginaAnterior()"> Trocar paginaAnterior</button>
+    <button onclick="proximaPagina()"> Trocar proximaPagina</button>
+    <button onclick="navegarPeloHistorico()"> Trocar navegarPeloHistorico</button>
+    <script>
+        function trocarHref(){
+            location.href = 'https://www.google.com';
+        }
+        function fazerAssgin(){
+            location.assign ('https://www.google.com');
+        }
+        function fazerReplace(){
+            location.replace ('https://www.google.com');
+        }
+        function fazerReload(){
+            location.reload();
+        }
+        function paginaAnterior(){
+            location.back();
+        }
+        function proximaPagina(){
+            location.foward();
+        }
+        function navegarPeloHistorico(n){
+            location.go(n);
+        }
+    </script>
+</body>
+</html>

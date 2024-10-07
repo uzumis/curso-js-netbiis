@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.alert('ola,mundo');
+        let confirma = window.confirm('Voce confirma?');
+        let nome = window.prompt('Nome?');
+        console.log(nome);
+
+
+        console.log('Largura da janela interna: '+ window.innerWidth);
+        console.log('Altura da janela interna: '+ window.innerHeight);
+        console.log('Largura da janela externa: '+ window.outerWidth);
+        console.log('Altura da janela externa: '+ window.outerHeight);
+
+        //screen
+        console.log(window.screen);
+        console.log('Largura da tela: '+ window.screen.width);
+        console.log('Altura da tela: '+ window.screen.height);
+        console.log('Largura da tela disponivel: '+ window.screen.availWidth);
+        console.log('Altura da tela disponivel: '+ window.screen.availHeight);
+
+        //Redimensionar e mover a janela
+
+        window.resizeTo(700,500);
+        window.moveTo(100,100);
+        
+    </script>
+</body>
+</html>
