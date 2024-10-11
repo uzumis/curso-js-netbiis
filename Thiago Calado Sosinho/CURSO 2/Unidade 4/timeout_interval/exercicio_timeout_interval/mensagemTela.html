@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let timer = prompt(`Defina o numero de segundos que a mensagem sera exibido`);
+
+        timeOut(parseInt(timer));
+
+        function timeOut(timer) {
+            const timeout = setTimeout(() => {
+                alert(`Executado apos ${timer} segundos`);
+            }, timer * 1000);
+        }
+
+    </script>
+</body>
+
+</html>

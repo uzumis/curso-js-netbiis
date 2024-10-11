@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <script> 
+        function somarExibir(a, b, callback) {
+            const soma = a + b;
+            callback(soma);
+        }
+
+        function iniciar() {
+            const num1 = parseFloat(prompt("Digite o primeiro número:"));
+            const num2 = parseFloat(prompt("Digite o segundo número:"));
+            const escolha = prompt("Como você quer ver a soma? (console, janela, documento)").toLowerCase();
+            
+            if (escolha === "console") {
+                somarExibir(num1, num2, console.log);
+            } else if (escolha === "janela") {
+                somarExibir(num1, num2, alert);
+            } else if (escolha === "documento") {
+                somarExibir(num1, num2, function(result) {
+                    document.write(result);
+                });
+            } else {
+                alert("Escolha inválida! Tente novamente.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="iniciar()">Somar Números</button>
+</body>
+</html>
