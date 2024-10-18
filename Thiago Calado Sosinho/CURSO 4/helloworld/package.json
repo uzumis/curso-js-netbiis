@@ -1,0 +1,20 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Projeto do Thiago",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "helloworld": "file:",
+    "nodemon": "^3.1.7",
+    "validator": "^13.12.0"
+  }
+}
