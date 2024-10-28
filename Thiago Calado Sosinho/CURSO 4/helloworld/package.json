@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "description": "Projeto do Thiago",
   "dependencies": {
     "chalk": "^5.3.0",
+    "express": "^4.21.1",
     "helloworld": "file:",
     "nodemon": "^3.1.7",
     "validator": "^13.12.0"
