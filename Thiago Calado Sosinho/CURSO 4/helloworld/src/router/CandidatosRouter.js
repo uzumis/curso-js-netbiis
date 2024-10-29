@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { CandidatoValidator } from "../validators/CadidatosValidador.js";
 
 const router = Router();
 
@@ -21,19 +22,27 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-    const {id, nome, numero, partido, foto } = req.body; 
-    
-    const newCandidato = {
-        id,
-        nome,
-        numero,
-        partido,
-        foto,
-        votos: 0
-    };
+    const { id, nome, numero, partido, foto } = req.body;
+    const validacao = CandidatoValidator.validate({ id, nome, numero, partido, foto });
 
-    candidatos.push(newCandidato);
-    res.status(201).json(newCandidato); 
+    if (validacao.error) {
+        res.status(400).send({ message: validacao.error.details[0].message })
+    } else {
+
+        const newCandidato = {
+            id,
+            nome,
+            numero,
+            partido,
+            foto,
+            votos: 0
+        };
+
+        candidatos.push(newCandidato);
+        
+        res.status(201).json(newCandidato);
+    }
+
 });
 
 router.put('/:id', (req,res)=>{
