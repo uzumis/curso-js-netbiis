@@ -8,6 +8,31 @@
       "notas": [
         10
       ]
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "dataNascimento": "2003-01-16",
+      "email": "natan@gmail.com",
+      "notas": [
+        10
+      ]
+    },
+    {
+      "nome": "Thiago",
+      "dataNascimento": "2003-01-16",
+      "email": "natan@gmail.com",
+      "notas": [
+        10
+      ]
+    },
+    {
+      "nome": "Thiago",
+      "dataNascimento": "2003-01-16",
+      "email": "natan@gmail.com",
+      "notas": [
+        10
+      ]
     }
   ]
 }

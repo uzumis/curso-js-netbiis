@@ -1,0 +1,36 @@
+{
+  "candidatos": [
+    {
+      "id": 1,
+      "nome": "asdasdasdasd",
+      "numero": "1111",
+      "partido": "KDF",
+      "foto": "http://example.com/photo.jpg",
+      "votos": 0
+    },
+    {
+      "id": 1,
+      "nome": "asdasdasdasd",
+      "numero": "1111",
+      "partido": "KDF",
+      "foto": "http://example.com/photo.jpg",
+      "votos": 0
+    },
+    {
+      "id": 1,
+      "nome": "asdasdasdasd",
+      "numero": "1111",
+      "partido": "KDF",
+      "foto": "http://example.com/photo.jpg",
+      "votos": 0
+    },
+    {
+      "id": 2,
+      "nome": "asdasdasdasd",
+      "numero": "1111",
+      "partido": "KDF",
+      "foto": "http://example.com/photo.jpg",
+      "votos": 0
+    }
+  ]
+}
