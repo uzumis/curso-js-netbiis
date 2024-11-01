@@ -31,6 +31,22 @@
       "partido": "KDF",
       "foto": "http://example.com/photo.jpg",
       "votos": 0
+    },
+    {
+      "id": 3,
+      "nome": "Zezin do Povo",
+      "numero": "50",
+      "partido": "PSOL",
+      "foto": "asdasdad",
+      "votos": 0
+    },
+    {
+      "id": 3,
+      "nome": "Zezin do Povo",
+      "numero": "50",
+      "partido": "PSOL",
+      "foto": "http://example.com/photo.jpg",
+      "votos": 0
     }
   ]
 }
