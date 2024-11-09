@@ -22,22 +22,16 @@ export async function criarEleitor(eleitor) {
   
 
 export async function atualizarEleitor(eleitor) {
-   if (!eleitor) {
-      throw new Error("The 'eleitor' object is undefined or null.");
-   }
    
-   const { nome, cpf, senha} = eleitor;
-   
+   const { nome, cpf, senha, id} = eleitor;
    const result = await pool.query(
       'UPDATE eleitor SET nome = $1, cpf = $2, senha = $3 WHERE id = $4 RETURNING *',
-      [nome, cpf, senha]
+      [nome, cpf, senha, id]
    );
    
    return result.rows[0];
 }
 
-
-
-export async function deletarEleicao(id){
+export async function deletarEleitor(id){
    await pool.query('DELETE FROM eleitor WHERE id = $1', [id]);
 }

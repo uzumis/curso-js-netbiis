@@ -1,13 +1,13 @@
 import * as CandidatosService from "../services/CandidatosService.js";
 
 export async function listarCandidatos(req, res) {
-    if (req.query.numero){
+    if (req.query.numero) {
         const candidatos = await CandidatosService.obterCandidatoPorNumero(req.query.numero, req.query.eleicaoId);
         return res.send(candidatos);
     }
-   console.log(req.query.eleicaoId);
-   const candidatos = await CandidatosService.listarCandidatos(req.query.eleicaoId);
-   return res.send(candidatos);
+    console.log(req.query.eleicaoId);
+    const candidatos = await CandidatosService.listarCandidatos(req.query.eleicaoId);
+    return res.send(candidatos);
 }
 
 export async function buscarCandidatoPeloNumero(req, res) {

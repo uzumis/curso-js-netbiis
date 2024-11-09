@@ -8,4 +8,4 @@ const EleitorMiddleware = (req, res, next) => {
     }
 };
 
-export { EleitorMiddleware };
+export default EleitorMiddleware;

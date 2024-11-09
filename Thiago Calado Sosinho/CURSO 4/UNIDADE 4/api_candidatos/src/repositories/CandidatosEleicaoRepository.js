@@ -7,7 +7,7 @@ export async function buscarReferencia(idCandidato, idEleicao) {
 }
 
 export async function adicionarCandidatoEleicao(idCandidato, idEleicao) {
-    const result = await pool.query('INSERT INTO candidato_eleicaos (eleicao_id, candidato_id) VALUES ($1, $2) RETURNING *', [idEleicao, idCandidato]);
+    const result = await pool.query('INSERT INTO candidato_eleicao (eleicao_id, candidato_id) VALUES ($1, $2) RETURNING *', [idEleicao, idCandidato]);
     return result.rows[0];
 }
 

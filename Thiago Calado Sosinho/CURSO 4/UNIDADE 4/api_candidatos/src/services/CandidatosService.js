@@ -5,11 +5,12 @@ export async function listarCandidatos() {
 }
 
 export async function buscarCandidato(id) {
-    const candidato = await CandidatosRepository.buscarCandidato(id);
-    if (candidato.length == 0) {
-        throw new Error("Candidato não encontrado");
-    }
     return await CandidatosRepository.buscarCandidato(id);
+}
+
+export async function obterCandidato(id, eleicaoId) {
+    const res = await CandidatosRepository.obterCandidato(id, eleicaoId);
+    return res;
 }
 
 export async function buscarCandidatoPeloNumero(id) {
@@ -25,9 +26,5 @@ export function atualizarCandidato(candidato) {
 }
 
 export async function deletarCandidato(id) {
-    const candidato = await CandidatosRepository.buscarCandidato(id);
-    if (candidato.length == 0) {
-        throw new Error("Candidato não encontrado");
-    }
     return CandidatosRepository.deletarCandidato(id);
 }
