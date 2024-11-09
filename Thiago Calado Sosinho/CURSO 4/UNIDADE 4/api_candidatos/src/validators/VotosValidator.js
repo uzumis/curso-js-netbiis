@@ -6,4 +6,5 @@ const votoSchema = Joi.object({
     numero: Joi.number().required()
 });
 
+
 export default votoSchema;

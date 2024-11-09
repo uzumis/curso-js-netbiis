@@ -7,12 +7,3 @@ export const CandidatoValidator = Joi.object({
     foto: Joi.string().uri().optional(),        
     votos: Joi.number().integer().min(0).default(0) 
 });
-
-const body = {
-    id: "123",               
-    nome: "Maria Silva",     
-    numero: 45,               
-    partido: "ABC",         
-    foto: "http://example.com/photo.jpg", 
-    votos: 0                  
-};

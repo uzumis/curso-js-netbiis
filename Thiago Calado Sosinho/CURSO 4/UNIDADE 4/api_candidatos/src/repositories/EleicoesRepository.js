@@ -11,12 +11,17 @@ export async function obterEleicao(id){
     return result.rows[0] ?? false;
    }
 
+export async function resumoEleicao(id) {
+   const result = await pool.query('SELECT * FROM vw_apuracao_final WHERE eleicao_id = $1', [id]);
+   return result.rows;
+}
+
 export async function criarEleicao(eleicao) {
-   const { nome, numero, partido } = eleicao;
+   const { nome, data, descricao } = eleicao;
    try {
       const result = await pool.query(
-         'INSERT INTO eleicao (nome, numero, partido) VALUES ($1, $2, $3) RETURNING *',
-         [nome, numero, partido]
+         'INSERT INTO eleicao (nome, data, descricao) VALUES ($1, $2, $3) RETURNING *',
+         [nome, data, descricao]
       );
       return result.rows[0];
    } catch (error) {
@@ -31,11 +36,11 @@ export async function atualizarEleicao(eleicao) {
       throw new Error("The 'eleicao' object is undefined or null.");
    }
    
-   const { nome, numero, partido, id } = eleicao;
+   const { nome, data, descricao, id } = eleicao;
    
    const result = await pool.query(
-      'UPDATE eleicao SET nome = $1, numero = $2, partido = $3 WHERE id = $4 RETURNING *',
-      [nome, numero, partido, id]
+      'UPDATE eleicao SET nome = $1, data = $2, descricao = $3 WHERE id = $4 RETURNING *',
+      [nome, data, descricao, id]
    );
    
    return result.rows[0];
