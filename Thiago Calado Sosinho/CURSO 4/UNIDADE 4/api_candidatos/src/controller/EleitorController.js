@@ -1,4 +1,3 @@
-import { EleitorValidator } from "../validators/EleitorValidator.js";
 import * as EleitorService from "../services/EleitorService.js";
 
 export async function listarEleitores(req, res) {

@@ -1,6 +1,7 @@
 import * as EleicoesRepository from "../repositories/EleicoesRepository.js"
 import * as candidatoEleicaoRepository from '../repositories/CandidatosEleicaoRepository.js';
 import * as candidatosService from './CandidatosService.js';
+import AppError from '../errors/AppError.js';
 export async function listarEleicoes() {
     return await EleicoesRepository.listarEleicoes();
 }
