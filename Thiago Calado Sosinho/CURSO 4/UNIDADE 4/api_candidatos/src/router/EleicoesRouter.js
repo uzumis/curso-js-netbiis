@@ -3,9 +3,9 @@
 import { Router } from "express";
 import * as EleicoesController from "../controller/EleicoesController.js";
 import AdminMiddleware from "../middlewares/authorization/RotaAdmin.js";
-import { EleicoesValidator, verificarEleicaoExistente } from "../validators/EleicoesValidator.js";
-import * as Validator from "../validators/MainValidator/MainValidator.js";
-import { idValidator } from "../validators/idValidator/ValidateId.js";
+import { EleicoesValidator, verificarEleicaoExistente } from "../middlewares/validators/EleicoesValidator.js";
+import * as Validator from "../middlewares/validators/MainValidator/MainValidator.js";
+import { idValidator } from "../middlewares/validators/idValidator/ValidateId.js";
 
 const router = new Router();
 

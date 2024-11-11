@@ -1,5 +1,4 @@
 import * as votosService from '../services/VotosService.js';
-import votoSchema from '../validators/VotosValidator.js';
 
 export async function inserirVoto(req, res) {
     const body = req.body;

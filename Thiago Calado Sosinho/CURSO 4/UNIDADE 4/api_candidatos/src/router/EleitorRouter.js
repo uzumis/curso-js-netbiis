@@ -1,8 +1,8 @@
 import { Router } from "express";
 import * as EleitorController from "../controller/EleitorController.js";
-import { EleitorValidator, verificarEleitorExistente } from "../validators/EleitorValidator.js";
-import * as Validator from "../validators/MainValidator/MainValidator.js";
-import { idValidator } from "../validators/idValidator/ValidateId.js";
+import { EleitorValidator, verificarEleitorExistente } from "../middlewares/validators/EleitorValidator.js";
+import * as Validator from "../middlewares/validators/MainValidator/MainValidator.js";
+import { idValidator } from "../middlewares/validators/idValidator/ValidateId.js";
 import AdminMiddleware from "../middlewares/authorization/RotaAdmin.js";
 
 const router = Router();

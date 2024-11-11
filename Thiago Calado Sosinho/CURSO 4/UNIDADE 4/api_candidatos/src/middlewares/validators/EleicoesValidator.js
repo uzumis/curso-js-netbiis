@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import * as EleicoesService from '../services/EleicoesService.js';
+import * as EleicoesService from '../../services/EleicoesService.js';
 
 export const EleicoesValidator = Joi.object({
     nome: Joi.string().required(),

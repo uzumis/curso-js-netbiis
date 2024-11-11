@@ -1,5 +1,5 @@
-import { CandidatoValidator } from "../validators/CadidatosValidador.js";
-import * as CandidatosService from "../services/CandidatosService.js";
+import { CandidatoValidator } from "../middlewares/validators/CadidatosValidador.js";
+import * as CandidatosService from "../../services/CandidatosService.js";
 
 export function listarCandidatos(req, res){
     const candidatos = CandidatosService.listarCandidatos();
