@@ -11,6 +11,11 @@ export async function obterEleitor(id) {
    return result.rows[0] ?? false;
 }
 
+export async function obterEleitorPorCpf(cpf){
+   const result = await pool.query ('SELECT * FROM eleitor where cpf = $1', [cpf]);
+   return result.rows[0] ?? false;
+}
+
 export async function criarEleitor(eleitor) {
    const { nome, cpf, senha } = eleitor;
    const result = await pool.query(
@@ -23,10 +28,20 @@ export async function criarEleitor(eleitor) {
 
 export async function atualizarEleitor(eleitor) {
    
-   const { nome, cpf, senha, id} = eleitor;
+   const { nome, cpf, id} = eleitor;
    const result = await pool.query(
-      'UPDATE eleitor SET nome = $1, cpf = $2, senha = $3 WHERE id = $4 RETURNING *',
-      [nome, cpf, senha, id]
+      'UPDATE eleitor SET nome = $1, cpf = $2 WHERE id = $3 RETURNING *',
+      [nome, cpf, id]
+   );
+   
+   return result.rows[0];
+}
+
+export async function atualizarSenha(eleitor){
+   const {senha, id} = eleitor;
+   const result = await pool.query(
+      'UPDATE eleitor SET senha = $1 WHERE id = $2 RETURNING *',
+      [senha, id]
    );
    
    return result.rows[0];

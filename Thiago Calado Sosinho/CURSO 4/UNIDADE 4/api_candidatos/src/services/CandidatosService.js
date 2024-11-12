@@ -1,5 +1,5 @@
 import * as CandidatosRepository from "../repositories/CandidatosRepository.js"
-
+import AppError from '../errors/AppError.js';
 export async function listarCandidatos() {
     return await CandidatosRepository.listarCandidatos();
 }
