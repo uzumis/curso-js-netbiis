@@ -50,3 +50,10 @@ export async function atualizarSenha(eleitor){
 export async function deletarEleitor(id){
    await pool.query('DELETE FROM eleitor WHERE id = $1', [id]);
 }
+
+export async function atualizarPerfilEleitor(id, perfil) {
+   await pool.query(
+       'UPDATE eleitor SET perfil = $1 WHERE id = $2',
+       [perfil, id]
+   );
+}

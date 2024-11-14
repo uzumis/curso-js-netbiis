@@ -57,3 +57,16 @@ export async function deletarEleitor(req, res) {
         res.status(200).send({ message: `Eleitor ${id} deletado com sucesso.` });
     
 }
+
+export async function atualizarPerfilEleitor(req, res) {
+    const id = req.params.id;         
+    const { perfil } = req.body;     
+
+    try {
+        await EleitorService.atualizarPerfilEleitor({ id, perfil });
+        res.send({ message: "Perfil atualizado com sucesso" });
+    } catch (error) {
+        console.error("Erro ao atualizar o perfil:", error);
+        res.status(500).send({ error: "Erro ao atualizar o perfil" });
+    }
+}

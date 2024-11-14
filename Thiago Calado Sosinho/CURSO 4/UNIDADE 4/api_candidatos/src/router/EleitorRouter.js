@@ -4,18 +4,17 @@ import { EleitorValidator,ValidarLoginMiddleware, verificarEleitorExistente, Val
 import * as Validator from "../middlewares/validators/MainValidator/MainValidator.js";
 import { idValidator } from "../middlewares/validators/idValidator/ValidateId.js";
 import AdminMiddleware from "../middlewares/authorization/RotaAdmin.js";
-
+import { EleitorAuthMiddleware } from "../middlewares/AuthMiddlewares.js";
 const router = Router();
 
 router
-    .get('/', EleitorController.listarEleitores)
+    .get('/', EleitorAuthMiddleware, EleitorController.listarEleitores)
     .get('/:id',
         Validator.validateId(idValidator), 
         verificarEleitorExistente, 
         EleitorController.obterEleitor
     )
-    .post('/',
-        AdminMiddleware, 
+    .post('/', 
         Validator.validateBody(EleitorValidator), 
         EleitorController.criarEleitor
     )
@@ -35,6 +34,9 @@ router
         AdminMiddleware,
         verificarEleitorExistente, 
         EleitorController.deletarEleitor
-    );
+    )
+    .put('/atualizar-perfil/:id'
+        , EleitorController.atualizarPerfilEleitor);
+
 
 export default router;

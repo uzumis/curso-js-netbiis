@@ -46,8 +46,6 @@ export async function atualizarEleicao(eleicao) {
    return result.rows[0];
 }
 
-
-
 export async function deletarEleicao(id){
    await pool.query('DELETE FROM eleicao WHERE id = $1', [id]);
 }

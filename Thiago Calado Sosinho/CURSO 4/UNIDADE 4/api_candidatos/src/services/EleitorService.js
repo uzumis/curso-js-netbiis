@@ -1,6 +1,8 @@
 import AppError from "../errors/AppError.js";
 import * as EleitorRepository from "../repositories/EleitorRepository.js"
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
 
 const {compareSync, hash} = bcrypt;
 
@@ -13,21 +15,16 @@ export async function obterEleitor(id) {
 }
 
 export async function criarEleitor(loginReq) {
-    // Verifica se o CPF já está cadastrado
     const eleitorExistente = await EleitorRepository.obterEleitorPorCpf(loginReq.cpf);
     if (eleitorExistente) {
         throw new AppError('CPF já cadastrado', 400);
     }
-
-    // Cria um novo objeto eleitor com os dados do loginReq
     const hashSenha = await hash(loginReq.senha, 10);
     const eleitor = {
         nome: loginReq.nome,
         cpf: loginReq.cpf,
         senha: hashSenha
     };
-
-    // Salva o novo eleitor no banco de dados
     const result = await EleitorRepository.criarEleitor(eleitor);
     return result;
 }
@@ -35,13 +32,14 @@ export async function criarEleitor(loginReq) {
 export async function login(loginReq){
     const eleitor = await EleitorRepository.obterEleitorPorCpf(loginReq.cpf);
     if (!eleitor){
-        throw new AppError ('CPF ou senha incorretos', 400);
+        throw new AppError ('CPF ou senha incorretos', 401);
     }
     const senhaCorreta = compareSync(loginReq.senha, eleitor.senha);
     if (!senhaCorreta){
-        throw new AppError('CPF ou senha incorretos', 400);
+        throw new AppError('CPF ou senha incorretos', 401);
     }
-    return {id: eleitor.id, nome: eleitor.nome, cpf: eleitor.cpf}
+    let token = generateToken({id: eleitor.id, nome:eleitor.nome, cpf:eleitor.cpf, perfil:eleitor.perfil});
+    return ({token:token});
 }
 
 export function atualizarEleitor(candidato) {
@@ -69,4 +67,13 @@ export async function atualizarSenha({ id, senhaAtual, novaSenha }) {
 
 export function deletarEleitor(id) {
     return EleitorRepository.deletarEleitor(id);
+}
+
+export function atualizarPerfilEleitor({ id, perfil }) {
+    return EleitorRepository.atualizarPerfilEleitor(parseInt(id, 10), perfil);
+}
+
+
+function generateToken(data){
+    return jwt.sign(data, process.env.JWT_SECRET, {expiresIn: '1h'})
 }

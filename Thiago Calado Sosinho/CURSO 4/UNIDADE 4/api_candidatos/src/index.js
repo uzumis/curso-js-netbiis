@@ -14,6 +14,6 @@ app.use(LogMiddleware);
 
 app.use('/', AppRouter);
 app.use(ErrorHandler);
-app.listen(3000, () =>{
-	console.log("Servidor escutando na porta 3000");
+app.listen(process.env.PORT, () =>{
+	console.log("Servidor escutando na porta "+process.env.PORT);
 })
